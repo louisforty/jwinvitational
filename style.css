@@ -49,39 +49,58 @@ body {
 }
 
 .table-container {
-  width: 100%;
+  margin: 20px;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin-top: 15px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 8px;
-  padding: 5px;
+  position: relative;
 }
 
 table {
+  width: 100%;
   border-collapse: collapse;
-  width: max-content;
-  min-width: 100%;
-  margin: 0;
-  background-color: transparent;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 1000px; /* Ensure minimum width for scrolling */
 }
 
 th, td {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 4px;
+  padding: 12px;
   text-align: center;
-  height: 32px;
-  font-size: 14px;
+  border: 1px solid #ddd;
   white-space: nowrap;
 }
 
-th {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  font-weight: bold;
+/* Make name column sticky */
+th:first-child,
+td:first-child {
   position: sticky;
-  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
   z-index: 1;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Make total column sticky */
+th:last-child,
+td:last-child {
+  position: sticky;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 1;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure sticky columns have proper width */
+th:first-child,
+td:first-child {
+  width: 150px;
+  min-width: 150px;
+}
+
+th:last-child,
+td:last-child {
+  width: 80px;
+  min-width: 80px;
 }
 
 .par-row {
