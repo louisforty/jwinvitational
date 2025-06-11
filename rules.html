@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tournament Rules</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background-image: url('assets/scoreboard-bg2.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .tournament-title {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            font-size: clamp(20px, 5vw, 24px);
+            font-weight: bold;
+        }
+
+        .back-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid white;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .rules-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .rule-section {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .rule-section:last-child {
+            border-bottom: none;
+        }
+
+        .rule-section h2 {
+            color: #ffd700;
+            margin-top: 0;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .rule-section p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .rule-section ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .rule-section li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .rules-container {
+                padding: 15px;
+            }
+
+            .rule-section {
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+            }
+
+            .rule-section h2 {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="tournament-title">JW Invitational</h1>
+        <a href="index.html" class="back-link">Back to Scoreboard</a>
+    </div>
+
+    <div class="rules-container">
+        <div class="rule-section">
+            <h2>1. Format</h2>
+            <p>The format shall be a four-man scramble.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>2. Mulligans</h2>
+            <p>Each player shall have one non-transferrable mulligan per side (i.e. a player cannot give their mulligan to a teammate). If a player does not use his mulligan on the front nine, he may not use it on the back 9. If you don't use it… you lose it.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>3. Gimmes</h2>
+            <p>Gimmes may be taken only if the ball is within the putter grip.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>4. Ball Placement</h2>
+            <p>The ball may be placed a club length from the chosen shot without improving your lie (e.g. can't move from first cut to fairway, etc.).</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>5. Closest to the Pin</h2>
+            <p>There will be a closest to the pin competition on the 2nd and 15th holes. A player must hit the green to win. Fringe does not count as "on the green".</p>
+            <p>Each participant shall contribute $5.00. Winner take all. Every player is presumed to be a participant. If a player wishes to not participate, he must clearly state such intention to his teammates before hitting his tee shot.</p>
+            <p>Payments will be made directly to winners. A mulligan cannot be a winning shot even if it is on the green.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>6. Longest Drive</h2>
+            <p>There will be a longest drive competition on the 9th hole (hole choice is subject to change if the 10th fairway is open). The winning shot must be in the fairway. First cut is not the fairway.</p>
+            <p>Each participant shall contribute $5.00. Winner take all. Every player is presumed to be a participant. If a player wishes to not participate, he must clearly state such intention to his teammates before hitting his tee shot.</p>
+            <p>Payments shall be made directly to winner. A mulligan cannot be a winning shot even if it is in the fairway.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>7. Brandon Q. Lytle Persimmon Challenge</h2>
+            <p>On the 12th tee box (a true risk/reward par 4), there will be a vintage persimmon 3 wood. If all four players on a team use the persimmon for their tee shot, the team will receive one stroke. If a player uses a mulligan for his tee shot, even if he uses the persimmon, the team does not receive a stroke.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>8. Pace of Play</h2>
+            <p>Last year, the pro offered some gentle chastisement for our general pace of play. In order to facilitate quick play and avoid any potential awkwardness, please adhere to the following rules and considerations:</p>
+            <ul>
+                <li>There shall be a two-put maximum except on par 3's (holes 2, 6, 15, and 17). A putt from the fringe does not count as a "putt" for the purposes of the two-putt max.</li>
+                <li>No breakfast balls</li>
+                <li>You may not use a mulligan on the 1st tee so everyone gets a prompt start</li>
+                <li>Please hit off the first tee as soon as the fairway is clear</li>
+                <li>Load up on drinks instead of going back to the halfway house several times. Note that you can easily hit the halfway house before the first hole, after hole 7, after hole 9, and after hole 11. After that, you won't be able to get any more drinks. When in doubt, over-buy.</li>
+                <li>The pro actually went out of his way to tell me to stay in the order of tee times which you are assigned. There technically cannot be two groups in a row that do not have a member.</li>
+                <li>Spend a reasonable amount of time looking for errant balls. This consideration applies to all but especially to Patrick Denbow.</li>
+            </ul>
+        </div>
+
+        <div class="rule-section">
+            <h2>9. Inaugural Team Spirit Award</h2>
+            <p>The team who displays the best team spirit will receive the Inaugural Team Spirit Award. The criteria basically is who has the best matching/complementary outfits. In order to participate, you must submit a photo of your entire team to a third party judge. The judge is yet to be determined but will not be a player.</p>
+        </div>
+
+        <div class="rule-section">
+            <h2>10. The Grant B. Roberts Sportsmanship Award</h2>
+            <p>The Grant B. Roberts Sportsmanship Award shall be awarded to the player who best exemplifies the qualities of both sportship and manship.</p>
+        </div>
+    </div>
+</body>
+</html> 
