@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Tournament Rules</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         * {
             box-sizing: border-box;
@@ -38,6 +39,8 @@
         }
 
         .back-link {
+            display: inline-block;
+            margin-top: 20px;
             color: white;
             text-decoration: none;
             padding: 8px 15px;
@@ -45,7 +48,6 @@
             border: 2px solid white;
             border-radius: 4px;
             transition: all 0.3s ease;
-            font-size: 14px;
         }
 
         .back-link:hover {
@@ -54,10 +56,22 @@
 
         .rules-container {
             max-width: 800px;
-            margin: 0 auto;
-            background-color: rgba(0, 0, 0, 0.7);
+            margin: 20px auto;
             padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
             border-radius: 8px;
+        }
+
+        .rules-container h2 {
+            color: #ffd700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .rules-container p {
+            margin-bottom: 15px;
+            line-height: 1.5;
         }
 
         .rule-section {
@@ -103,7 +117,12 @@
             }
 
             .rules-container {
+                margin: 10px;
                 padding: 15px;
+            }
+
+            .rules-container h2 {
+                font-size: 1.3em;
             }
 
             .rule-section {
