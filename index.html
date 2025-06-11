@@ -4,6 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Score Tracker</title>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDzgcSU_m3kiZs433_ubSpNom8V55nEPzA",
+      authDomain: "jw-invitational.firebaseapp.com",
+      databaseURL: "https://jw-invitational-default-rtdb.firebaseio.com",
+      projectId: "jw-invitational",
+      storageBucket: "jw-invitational.firebasestorage.app",
+      messagingSenderId: "906083916458",
+      appId: "1:906083916458:web:d8635d3bacd35ff23eced3"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
