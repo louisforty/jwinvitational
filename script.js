@@ -1,5 +1,3 @@
-const db = firebase.database();
-
 // Render a player row from Firebase
 function renderPlayer(playerId, data) {
   const table = document.getElementById("players");
