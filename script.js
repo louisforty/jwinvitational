@@ -9,8 +9,16 @@ function renderPlayer(playerId, data) {
     table.appendChild(row);
   }
 
-  let cells = `<td><input type="text" value="${data.name || ''}" 
-                onchange="updatePlayer('${playerId}')" /></td>`;
+  let cells = `<td>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <input type="text" value="${data.name || ''}" 
+        onchange="updatePlayer('${playerId}')" />
+      <button onclick="deletePlayer('${playerId}')" 
+        style="background: #ff4444; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer;">
+        ×
+      </button>
+    </div>
+  </td>`;
 
   for (let i = 0; i < 18; i++) {
     const score = data.scores?.[i] ?? "";
@@ -65,6 +73,13 @@ function sortTable() {
   });
 
   sorted.forEach(row => tbody.appendChild(row));
+}
+
+// Delete a player from Firebase
+function deletePlayer(playerId) {
+  if (confirm('Are you sure you want to delete this team?')) {
+    db.ref("players/" + playerId).remove();
+  }
 }
 
 // Listen for changes in Firebase
