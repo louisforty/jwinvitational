@@ -49,39 +49,81 @@ body {
 }
 
 .table-container {
-  width: 100%;
+  margin: 20px;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin-top: 15px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 8px;
-  padding: 5px;
+  position: relative;
+  max-width: 100%;
 }
 
 table {
   border-collapse: collapse;
-  width: max-content;
-  min-width: 100%;
-  margin: 0;
-  background-color: transparent;
+  width: 100%;
+  min-width: 1200px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 th, td {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 4px;
+  padding: 12px;
   text-align: center;
-  height: 32px;
-  font-size: 14px;
+  border: 1px solid #ddd;
   white-space: nowrap;
 }
 
-th {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  font-weight: bold;
+/* Make first column (Name) sticky */
+th:first-child,
+td:first-child {
   position: sticky;
-  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.95);
   z-index: 1;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Make last column (Total) sticky */
+th:last-child,
+td:last-child {
+  position: sticky;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 1;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure sticky columns have proper width */
+th:first-child,
+td:first-child {
+  width: 120px;
+  min-width: 120px;
+}
+
+th:last-child,
+td:last-child {
+  width: 60px;
+  min-width: 60px;
+}
+
+/* Add a gradient fade effect on the sides */
+.table-container::before,
+.table-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.table-container::before {
+  left: 120px; /* Width of first column */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), transparent);
+}
+
+.table-container::after {
+  right: 60px; /* Width of last column */
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.1), transparent);
 }
 
 .par-row {
@@ -168,16 +210,26 @@ button:hover {
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hosted-by p {
   font-size: 1.2rem;
-  color: #333;
+  color: white;
   margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .big-spring-logo {
   max-width: 200px;
   height: auto;
+  display: block;
+  margin: 0 auto;
 }
   
