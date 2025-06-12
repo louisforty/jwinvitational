@@ -163,4 +163,21 @@ button:hover {
     font-size: 14px;
   }
 }
+
+.hosted-by {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.hosted-by p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.big-spring-logo {
+  max-width: 200px;
+  height: auto;
+}
   
