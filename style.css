@@ -82,6 +82,34 @@ th, td {
   white-space: nowrap;
 }
 
+/* Make the first and last columns sticky */
+th:first-child,
+td:first-child,
+th:last-child,
+td:last-child {
+  position: sticky;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+/* Position the first column on the left */
+th:first-child,
+td:first-child {
+  left: 0;
+}
+
+/* Position the last column on the right */
+th:last-child,
+td:last-child {
+  right: 0;
+}
+
+/* Ensure the sticky headers stay on top */
+th:first-child,
+th:last-child {
+  z-index: 2;
+}
+
 th {
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
