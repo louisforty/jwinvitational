@@ -34,7 +34,8 @@ function renderPlayer(playerId, data) {
   });
   
   const total = data.scores?.reduce((sum, val, index) => {
-    const score = parseInt(val) || 0;
+    const score = parseInt(val);
+    if (isNaN(score)) return sum; // Skip holes with no score
     const par = parValues[index];
     return sum + (score - par);
   }, 0) || 0;
@@ -80,7 +81,8 @@ function sortTable() {
 
     let total = 0;
     inputs.forEach((input, index) => {
-      const score = parseInt(input.value) || 0;
+      const score = parseInt(input.value);
+      if (isNaN(score)) return; // Skip holes with no score
       const par = parValues[index];
       total += (score - par);
     });
