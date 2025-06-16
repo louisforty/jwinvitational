@@ -26,8 +26,22 @@ function renderPlayer(playerId, data) {
                 onchange="updatePlayer('${playerId}')" /></td>`;
   }
 
-  const total = data.scores?.reduce((sum, val) => sum + (parseInt(val) || 0), 0) || 0;
-  cells += `<td class="total">${total}</td>`;
+  // Calculate score relative to par
+  const parRow = document.querySelector('.par-row');
+  const parValues = Array.from(parRow.querySelectorAll('td')).slice(1, 19).map(td => {
+    const text = td.textContent;
+    return parseInt(text.split(' ')[0]); // Extract just the number from "4 CtP" etc.
+  });
+  
+  const total = data.scores?.reduce((sum, val, index) => {
+    const score = parseInt(val) || 0;
+    const par = parValues[index];
+    return sum + (score - par);
+  }, 0) || 0;
+
+  // Format the score with + or - sign
+  const formattedScore = total > 0 ? `+${total}` : total;
+  cells += `<td class="total">${formattedScore}</td>`;
   row.innerHTML = cells;
 
   sortTable();
@@ -58,12 +72,20 @@ function sortTable() {
 
   rows.forEach(row => {
     const inputs = row.querySelectorAll("input[type='number']");
-    let total = 0;
-    inputs.forEach(input => {
-      const val = parseInt(input.value);
-      if (!isNaN(val)) total += val;
+    const parRow = document.querySelector('.par-row');
+    const parValues = Array.from(parRow.querySelectorAll('td')).slice(1, 19).map(td => {
+      const text = td.textContent;
+      return parseInt(text.split(' ')[0]);
     });
-    row.querySelector(".total").textContent = total;
+
+    let total = 0;
+    inputs.forEach((input, index) => {
+      const score = parseInt(input.value) || 0;
+      const par = parValues[index];
+      total += (score - par);
+    });
+    
+    row.querySelector(".total").textContent = total > 0 ? `+${total}` : total;
   });
 
   const sorted = rows.sort((a, b) => {
